@@ -46,17 +46,18 @@ font-weight:bold;
 <input type="text" id="buscar" placeholder="Buscar artista o disco...">
 
 <div id="catalogo"></div>
+
+</tr>
+</tbody></table>
+<script>
 <table class="table table-bordered table-hover table-condensed">
-<thead>
-<tr>
+<thead><tr><th title="Field #1">CD</th>
+<th title="Field #2">1349 Winter Mass [Limited Digipack Edition]</th>
+<th title="Field #3">FRANCE</th>
+<th title="Field #4">48000</th>
+<th title="Field #5">FIELD5</th>
 </tr></thead>
-<tbody>
-<tr>
-<th>CD</th>
-<th>1349</th>
-<th>Winter Mass [Limited Digipack Edition]</th>
-<th>FRANCE</th>
-<th>48000</th>
+<tbody><tr>
 <td>CD</td>
 <td>200 STAB WOUNDS</td>
 <td>Slave To The Scalpel</td>
@@ -71,32 +72,32 @@ font-weight:bold;
 <td align="right">54000</td>
 </tr>
 <tr>
-<td>DVD</td>
-<td>A LEGEND [Limited Slipcase Edition]</td>
+<td>DVD A LEGEND [Limited Slipcase Edition]</td>
 <td> </td>
 <td>USA</td>
-<td align="right">65000</td>
+<td>65000</td>
+<td align="right"> </td>
 </tr>
 <tr>
-<td>DVD</td>
-<td>A PERFECT CIRCLE</td>
+<td>DVD A PERFECT CIRCLE</td>
 <td>The Outsider - Lost In The Bermuda Triangle</td>
 <td>USA</td>
-<td align="right">42500</td>
+<td>42500</td>
+<td align="right"> </td>
 </tr>
 <tr>
-<td>LP</td>
-<td>A THOUSAND HORSES</td>
+<td>LP A THOUSAND HORSES</td>
 <td>Live At Metropolis Studios [RSD 2017 Exclusive]</td>
 <td>USA</td>
-<td align="right">77500</td>
+<td>77500</td>
+<td align="right"> </td>
 </tr>
 <tr>
-<td>LP</td>
-<td>AARON LEWIS</td>
+<td>LP AARON LEWIS</td>
 <td>Frayed At Both Ends (Deluxe) [Red &amp; Blue Vinyl 2 LP]</td>
 <td>USA</td>
-<td align="right">89000</td>
+<td>89000</td>
+<td align="right"> </td>
 </tr>
 <tr>
 <td>CD</td>
@@ -8779,8 +8780,6 @@ font-weight:bold;
 <td align="right">45000</td>
 </tr>
 </tbody></table>
-<script>
-
 fetch('discos.csv')
 .then(response => response.text())
 .then(data => {
