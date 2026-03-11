@@ -1,57 +1,89 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
 <meta charset="UTF-8">
 <title>Viejos Discos</title>
+
 <style>
 body{
-font-family: Arial;
+font-family:Arial;
 background:#111;
 color:white;
-text-align:center;
+padding:20px;
 }
 
 h1{
-color:#f5c542;
+color:#f2c94c;
 }
 
 input{
 padding:10px;
-width:60%;
-margin:20px;
+width:300px;
+margin-bottom:20px;
 }
 
 .disco{
 background:#222;
-margin:15px;
 padding:15px;
-border-radius:10px;
+margin:10px 0;
+border-radius:8px;
 }
 
-button{
-background:#25D366;
-border:none;
-padding:10px 20px;
-color:white;
-font-size:16px;
-border-radius:5px;
-cursor:pointer;
+.precio{
+color:#6fcf97;
+font-weight:bold;
 }
 </style>
+
 </head>
 
 <body>
 
 <h1>💿 Viejos Discos</h1>
+<p>Vinilos · CDs · Blu-ray · Importados</p>
+<p>📦 Envíos a todo Argentina</p>
 
-<p>Venta de discos de música - Envíos a todo Argentina</p>
+<input type="text" id="buscar" placeholder="Buscar artista o disco...">
 
-<input type="text" id="buscar" placeholder="Buscar por artista..." onkeyup="buscarDiscos()">
+<div id="catalogo"></div>
 
-<div id="catalogo">
+<script>
 
+fetch('discos.csv')
+.then(response => response.text())
+.then(data => {
+
+let filas = data.split("\n");
+let html = "";
+
+for(let i=1;i<filas.length;i++){
+
+let columnas = filas[i].split(",");
+
+let formato = columnas[0];
+let artista = columnas[1];
+let disco = columnas[2];
+let origen = columnas[3];
+let precio = columnas[4];
+
+if(!artista) continue;
+
+html += `
 <div class="disco">
-<h2>Soda Stereo</h2>
-<p>Álbum: Canción Animal</p>
-<button onclick="comprar('Soda Stereo - Canción Animal')">Comprar por WhatsApp</button>
+<h3>${artista} – ${disco}</h3>
+<p>Formato: ${formato}</p>
+<p>Origen: ${origen}</p>
+<p class="precio">$${precio}</p>
 </div>
+`;
+
+}
+
+document.getElementById("catalogo").innerHTML = html;
+
+});
+
+</script>
+
+</body>
+</html>
