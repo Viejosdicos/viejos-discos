@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Viejos Discos</title>
+<style>
+body{
+font-family: Arial;
+background:#111;
+color:white;
+text-align:center;
+}
+
+h1{
+color:#f5c542;
+}
+
+input{
+padding:10px;
+width:60%;
+margin:20px;
+}
+
+.disco{
+background:#222;
+margin:15px;
+padding:15px;
+border-radius:10px;
+}
+
+button{
+background:#25D366;
+border:none;
+padding:10px 20px;
+color:white;
+font-size:16px;
+border-radius:5px;
+cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<h1>💿 Viejos Discos</h1>
+
+<p>Venta de discos de música - Envíos a todo Argentina</p>
+
+<input type="text" id="buscar" placeholder="Buscar por artista..." onkeyup="buscarDiscos()">
+
+<div id="catalogo">
+
+<div class="disco">
+<h2>Soda Stereo</h2>
+<p>Álbum: Canción Animal</p>
+<button onclick="comprar('Soda Stereo - Canción Animal')">Comprar por WhatsApp</button>
+</div>
